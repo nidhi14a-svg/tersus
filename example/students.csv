@@ -1,0 +1,32 @@
+student_id,name,city,department,subject,score,attendance,fee,joined,status
+S01,Asha Rao,Pune,Computer Science,Python,88,92,45000,2023-07-12,Active
+S02,Rahul Mehta,Mumbai,Computer Science,Python,76,85,45000,2023-07-15,Active
+S03,Neha Shah,Delhi,Computer Science,Python,91,96,48000,2022-08-01,Alumni
+S04,Vikram Singh,Bengaluru,Computer Science,Databases,67,70,45000,2024-01-10,Active
+S05,Priya Nair,Pune,Computer Science,Databases,82,88,45000,2023-07-12,Active
+S06,Arjun Das,,Computer Science,Databases,54,61,42000,2024-01-18,On leave
+S07,Meera Iyer,Mumbai,Computer Science,Python,95,98,50000,2022-08-04,Alumni
+S08,Karan Patel,Delhi,Computer Science,Databases,,74,45000,2024-01-10,Active
+S09,Sana Khan,Pune,Mathematics,Algebra,84,90,40000,2023-07-20,Active
+S10,Dev Sharma,Mumbai,Mathematics,Algebra,71,80,40000,2023-07-20,Active
+S11,Ananya Gupta,Bengaluru,Mathematics,Algebra,93,97,42000,2022-08-08,Alumni
+S12,Rohit Verma,Delhi,Mathematics,Statistics,66,72,40000,2024-01-22,Active
+S13,Ishita Bose,Pune,Mathematics,Statistics,89,94,40000,2023-07-20,Active
+S14,Amit Joshi,,Mathematics,Statistics,58,65,,2024-01-22,On leave
+S15,Pooja Reddy,Mumbai,Mathematics,Algebra,77,83,40000,2023-07-25,Active
+S16,Nikhil Rao,Delhi,Mathematics,Statistics,81,86,42000,2022-08-11,Alumni
+S17,Tara Kapoor,Bengaluru,Physics,Mechanics,73,79,43000,2023-08-01,Active
+S18,Farhan Ali,Pune,Physics,Mechanics,86,91,43000,2023-08-01,Active
+S19,Leela Menon,Mumbai,Physics,Mechanics,62,68,43000,2024-02-02,Active
+S20,Harsh Vardhan,Delhi,Physics,Optics,90,95,46000,2022-08-15,Alumni
+S21,Divya Chawla,Bengaluru,Physics,Optics,79,84,43000,2023-08-01,Active
+S22,Omar Sheikh,Pune,Physics,Optics,55,60,43000,2024-02-05,On leave
+S23,Kavya Pillai,Mumbai,Physics,Mechanics,88,93,46000,2022-08-15,Alumni
+S24,Yash Jain,,Physics,Optics,,77,43000,2024-02-05,Active
+S25,Ritu Malhotra,Delhi,Computer Science,Python,69,75,45000,2024-01-12,Active
+S26,Aditya Kulkarni,Pune,Mathematics,Algebra,85,89,40000,2023-07-22,Active
+S27,Simran Kaur,Bengaluru,Physics,Mechanics,74,81,43000,2023-08-03,Active
+S28,Manish Tiwari,Mumbai,Computer Science,Databases,80,87,45000,2023-07-18,Active
+S29,Nisha Agarwal,Delhi,Mathematics,Statistics,92,96,42000,2022-08-09,Alumni
+S30,Gaurav Bhatt,Pune,Physics,Optics,83,88,43000,2023-08-06,Active
+S18,Farhan Ali,Pune,Physics,Mechanics,86,91,43000,2023-08-01,Active

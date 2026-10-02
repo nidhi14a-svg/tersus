@@ -1,3 +1,4 @@
+import pandas as pd
 import tersus
 from tersus import Cleaner
 
@@ -8,5 +9,5 @@ def test_package_version():
 
 
 def test_cleaner_import_and_instantiation():
-    cleaner = Cleaner()
+    cleaner = Cleaner(pd.DataFrame({"a": [1]}))
     assert isinstance(cleaner, Cleaner)
