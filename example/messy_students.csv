@@ -1,0 +1,84 @@
+ Student Name ,Age,Marks (%), Attendance (%) ,Overall Score,City ,Department,Gender ,Email Address,Phone Number ,Joining Date,Monthly Salary,Height ,Weight,Start Date, End Date 
+Nidhi Singh,19,92,95,91,Bangalore,CSE,Female,nidhi@gmail.com,9876543210,2026-01-10,25000,155 cm,68 kg,2026-01-10,2026-06-10
+Rahul Sharma,20,85,88,86,Bengaluru,cse,Male,rahul.sharma@gmail.com,9876543211,2026-02-15,30000,172 cm,70 kg,2026-02-15,2026-08-15
+Ananya Rao,twenty,78,82,80,Mysore,C.S.E.,female,ananya@@gmail.com,12345,15/02/2026,₹28000,160cm,55kg,2026-02-15,2026-07-15
+  Priya Nair  ,19,105,91,98, Bangalore ,ISE,F,priya.nair@gmail.com,9876543212,2026-03-01,32000,158 cm,58 kg,2026-03-01,2026-09-01
+Amit Kumar,21,67,75,70,Chennai,ECE,Male,amit.kumar@gmail.com,9876543213,2026-01-20,35000,175 cm,75 kg,2026-01-20,2026-07-20
+Sneha R,18,-5,80,65,Hyderabad,CSE,Female,sneha@gmail.com,9876543214,2026-04-01,26000,150 cm,50 kg,2026-04-01,2026-10-01
+Karan Patel,22,88,110,90,Mumbai,ME,Male,karan.patel@gmail.com,9876543215,2026-01-05,950000,180 cm,80 kg,2026-01-05,2026-07-05
+Meera Joshi,19,91,94,999,Bangalore,ISE,Female,meera.joshi@gmail.com,9876543216,2026-02-01,29000,162 cm,57 kg,2026-02-01,2026-08-01
+Arjun Reddy,twenty one,76,85,79,Hyderabad,ECE,Male,arjun.reddy@gmail.com,9876543217,2026-02-30,31000,178 cm,74 kg,2026-02-01,2026-08-01
+Divya Shetty,20,89,90,88,Mangalore,CSE,Female,divya.shetty@gmail.com,9876543218,2026-03-10,27000,157 cm,54 kg,2026-03-10,2026-09-10
+Vikram Rao,21,72,68,70,Bangalore,ME,Male,vikram.rao@gmail.com,9876543219,2026-01-15,40000,181 cm,83 kg,2026-01-15,2025-12-15
+Pooja Menon,19,84,89,86,Kochi,ISE,Female,pooja.menon@gmail.com,9876543220,2026-02-20,₹30000,159 cm,56 kg,2026-02-20,2026-08-20
+Rohit Verma,20,not available,77,75,Delhi,CSE,Male,rohit.verma@gmail.com,9876543221,2026-03-05,33000,174 cm,72 kg,2026-03-05,2026-09-05
+Ishita Das,19,93,96,94,Kolkata,C.S.E.,Female,ishita.das@gmail.com,9876543222,05-03-2026,36000,161 cm,53 kg,2026-03-05,2026-09-05
+Sanjay Kumar,23,65,70,68,Bangalore,ECE,Male,sanjay.kumar@gmail.com,9876543223,2026-01-12,45000,176 cm,78 kg,2026-01-12,2026-07-12
+Kavya H,18,88,91,90,Mysore,ISE,Female,kavya@gmail.com,9876543224,2026-04-15,28000,154 cm,51 kg,2026-04-15,2026-10-15
+Aditya Jain,20,79,83,81,Jaipur,CSE,Male,aditya.jain@gmail.com,9876543225,2026-02-10,not available,170 cm,69 kg,2026-02-10,2026-08-10
+Riya Sharma,19,86,87,86,Delhi,ISE,Female,riya.sharma@gmail.com,9876543226,2026-03-12,29000,163 cm,59 kg,2026-03-12,2026-09-12
+Manoj P,21,74,79,76,Chennai,ECE,Male,manoj@gmail.com,9876543227,2026-01-25,31000,177 cm,76 kg,2026-01-25,2026-07-25
+Sneha R,18,-5,80,65,Hyderabad,CSE,Female,sneha@gmail.com,9876543214,2026-04-01,26000,150 cm,50 kg,2026-04-01,2026-10-01
+Aarav Shah,20,91,93,92,Mumbai,CSE,Male,aarav.shah@gmail.com,9876543228,2026-02-18,37000,179 cm,77 kg,2026-02-18,2026-08-18
+Tanvi Kulkarni,19,87,90,88,Pune,ISE,Female,tanvi.kulkarni@gmail.com,9876543229,2026-03-08,32000,156 cm,52 kg,2026-03-08,2026-09-08
+Dev Malhotra,twenty,82,85,84,Delhi,CSE,Male,dev.malhotra@gmail.com,9876543230,2026-03-11,35000,173 cm,71 kg,2026-03-11,2026-09-11
+Anjali Rao,19,90,92,91,Bengaluru,Female,an.jali@gmail.com,9876543231,2026-01-19,30000,160 cm,56 kg,2026-01-19,2026-07-19
+Ramesh K,22,77,81,79,Mysore,ME,Male,ramesh.k@gmail.com,9876543232,2026-02-22,39000,182 cm,85 kg,2026-02-22,2026-08-22
+Neha Gupta,19,95,98,96,Delhi,ISE,Female,neha.gupta@gmail.com,9876543233,2026-03-15,34000,159 cm,54 kg,2026-03-15,2026-09-15
+Kabir Singh,21,68,73,70,Jaipur,ECE,Male,kabir.singh@gmail.com,9876543234,2026-01-08,28000,175 cm,72 kg,2026-01-08,2026-07-08
+Shreya Iyer,19,89,94,91,Chennai,CSE,Female,shreya.iyer@gmail.com,9876543235,2026-02-25,31000,157 cm,55 kg,2026-02-25,2026-08-25
+Mohit Verma,20,76,79,78,Delhi,CSE,Male,mohit.verma@gmail.com,9876543236,2026-03-20,33000,171 cm,68 kg,2026-03-20,2026-09-20
+  ,19,81,84,82,Bangalore,ISE,Female,missing.name@gmail.com,9876543237,2026-03-21,29000,155 cm,52 kg,2026-03-21,2026-09-21
+Ayesha Khan,19,88,91,90,Bengaluru,cse,Female,ayesha.khan@gmail.com,9876543238,2026-04-01,32000,158 cm,55 kg,2026-04-01,2026-10-01
+Rohan Mehta,20,84,86,85,Mumbai,CSE,Male,rohan.mehta@gmail.com,9876543239,2026-02-12,35000,176 cm,74 kg,2026-02-12,2026-08-12
+Isha N,19,91,95,93,Mysore,ISE,Female,isha@gmail.com,9876543240,2026-01-17,31000,157 cm,53 kg,2026-01-17,2026-07-17
+Vivek Reddy,21,70,75,73,Hyderabad,ECE,Male,vivek.reddy@gmail.com,9876543241,2026-03-04,37000,180 cm,79 kg,2026-03-04,2026-09-04
+Sakshi Jain,19,87,90,88,Delhi,ISE,Female,sakshi.jain@gmail.com,9876543242,2026-02-14,30000,160 cm,57 kg,2026-02-14,2026-08-14
+Rahul Sharma,20,85,88,86,Bengaluru,cse,Male,rahul.sharma@gmail.com,9876543211,2026-02-15,30000,172 cm,70 kg,2026-02-15,2026-08-15
+Kriti Das,18,79,83,81,Kolkata,CSE,Female,kriti.das@gmail.com,9876543243,2026-04-11,27000,153 cm,49 kg,2026-04-11,2026-10-11
+Naveen B,22,66,72,69,Bangalore,ME,Male,naveen.b@gmail.com,9876543244,2026-01-29,42000,178 cm,81 kg,2026-01-29,2026-07-29
+Pallavi Rao,19,92,96,94,Mysore,ISE,Female,pallavi.rao@gmail.com,9876543245,2026-03-16,33000,159 cm,55 kg,2026-03-16,2026-09-16
+Siddharth M,20,81,85,83,Chennai,ECE,Male,siddharth.m@gmail.com,9876543246,2026-02-19,36000,177 cm,73 kg,2026-02-19,2026-08-19
+Lavanya S,19,89,93,91,Hyderabad,CSE,Female,lavanya.s@gmail.com,9876543247,2026-03-22,29000,156 cm,54 kg,2026-03-22,2026-09-22
+Harish P,21,74,78,76,Bangalore,ME,Male,harish.p@gmail.com,9876543248,2026-01-30,40000,183 cm,84 kg,2026-01-30,2026-07-30
+Nandini R,19,96,99,97,Mangalore,ISE,Female,nandini.r@gmail.com,9876543249,2026-02-23,34000,158 cm,52 kg,2026-02-23,2026-08-23
+Gaurav S,20,83,87,85,Delhi,CSE,Male,gaurav.s@gmail.com,9876543250,2026-03-18,31000,174 cm,71 kg,2026-03-18,2026-09-18
+Anu P,19,90,94,92,Bangalore,CSE,Female,anu.p@gmail.com,9876543251,2026-04-04,28000,155 cm,53 kg,2026-04-04,2026-10-04
+Keshav N,21,77,82,79,Jaipur,ECE,Male,keshav.n@gmail.com,9876543252,2026-01-13,37000,179 cm,77 kg,2026-01-13,2026-07-13
+Monica D,19,85,89,87,Kochi,ISE,Female,monica.d@gmail.com,9876543253,2026-02-28,30000,161 cm,58 kg,2026-02-28,2026-08-28
+Suresh T,22,69,74,71,Chennai,ME,Male,suresh.t@gmail.com,9876543254,2026-03-25,43000,181 cm,86 kg,2026-03-25,2026-09-25
+Priya Nair,19,84,89,86,Kochi,ISE,Female,priya.nair@gmail.com,9876543220,2026-02-20,₹30000,159 cm,56 kg,2026-02-20,2026-08-20
+Aditi K,18,88,92,90,Bangalore,CSE,Female,aditi.k@gmail.com,9876543255,2026-04-09,27500,154 cm,50 kg,2026-04-09,2026-10-09
+Tarun R,20,73,78,75,Hyderabad,ECE,Male,tarun.r@gmail.com,9876543256,2026-01-21,36500,176 cm,72 kg,2026-01-21,2026-07-21
+Simran Gill,19,91,95,93,Delhi,ISE,Female,simran.gill@gmail.com,9876543257,2026-03-27,32000,157 cm,54 kg,2026-03-27,2026-09-27
+Vishal P,21,80,84,82,Mumbai,CSE,Male,vishal.p@gmail.com,9876543258,2026-02-17,39000,180 cm,79 kg,2026-02-17,2026-08-17
+Ritu S,19,86,90,88,Bengaluru,C.S.E.,Female,ritu.s@gmail.com,9876543259,2026-03-29,29500,156 cm,53 kg,2026-03-29,2026-09-29
+Akash B,20,71,76,73,Bangalore,ECE,Male,akash.b@gmail.com,9876543260,2026-01-24,35000,178 cm,75 kg,2026-01-24,2026-07-24
+Pavithra K,19,94,97,95,Mysore,ISE,Female,pavithra.k@gmail.com,9876543261,2026-04-12,31000,158 cm,52 kg,2026-04-12,2026-10-12
+Kunal Shah,22,64,69,66,Mumbai,ME,Male,kunal.shah@gmail.com,9876543262,2026-02-05,46000,184 cm,88 kg,2026-02-05,2026-08-05
+Swathi M,19,89,93,91,Bangalore,CSE,Female,swathi.m@gmail.com,9876543263,2026-03-30,28500,155 cm,54 kg,2026-03-30,2026-09-30
+Nikhil J,20,82,86,84,Delhi,CSE,Male,nikhil.j@gmail.com,9876543264,2026-01-26,34000,173 cm,70 kg,2026-01-26,2026-07-26
+Asha R,19,90,94,92,Chennai,ISE,Female,asha.r@gmail.com,9876543265,2026-02-26,30500,160 cm,56 kg,2026-02-26,2026-08-26
+Deepak K,21,75,80,77,Hyderabad,ECE,Male,deepak.k@gmail.com,9876543266,2026-03-31,38000,179 cm,78 kg,2026-03-31,2026-09-30
+Rhea D,19,88,92,90,Kolkata,CSE,Female,rhea.d@gmail.com,9876543267,2026-04-02,29500,157 cm,53 kg,2026-04-02,2026-10-02
+Pranav S,20,79,83,81,Pune,CSE,Male,pranav.s@gmail.com,9876543268,2026-01-27,33000,175 cm,74 kg,2026-01-27,2026-07-27
+Jyoti P,19,93,96,94,Bangalore,ISE,Female,jyoti.p@gmail.com,9876543269,2026-02-27,31500,159 cm,55 kg,2026-02-27,2026-08-27
+Rajat M,21,68,72,70,Delhi,ME,Male,rajat.m@gmail.com,9876543270,2026-03-13,41000,182 cm,82 kg,2026-03-13,2026-09-13
+Charu S,19,87,91,89,Mysore,CSE,Female,charu.s@gmail.com,9876543271,2026-04-06,29000,156 cm,54 kg,2026-04-06,2026-10-06
+Anand V,22,76,81,78,Chennai,ECE,Male,anand.v@gmail.com,9876543272,2026-01-28,39000,177 cm,76 kg,2026-01-28,2026-07-28
+Sonal B,19,92,95,93,Bangalore,ISE,Female,sonal.b@gmail.com,9876543273,2026-02-24,32500,158 cm,53 kg,2026-02-24,2026-08-24
+Manish R,20,not available,77,75,Delhi,CSE,Male,manish.r@gmail.com,9876543274,2026-03-17,36000,174 cm,73 kg,2026-03-17,2026-09-17
+Rashmi K,19,85,89,87,Bengaluru,ISE,Female,rashmi.k@gmail.com,9876543275,2026-04-07,30000,157 cm,52 kg,2026-04-07,2026-10-07
+Sahil P,21,72,76,74,Mumbai,ECE,Male,sahil.p@gmail.com,9876543276,2026-01-31,40000,180 cm,80 kg,2026-01-31,2026-07-31
+Tanya G,19,91,94,92,Delhi,CSE,Female,tanya.g@gmail.com,9876543277,2026-02-16,31000,159 cm,55 kg,2026-02-16,2026-08-16
+Yash A,20,83,87,85,Jaipur,CSE,Male,yash.a@gmail.com,9876543278,2026-03-23,34500,176 cm,72 kg,2026-03-23,2026-09-23
+Nisha P,19,89,93,91,Kochi,ISE,Female,nisha.p@gmail.com,9876543279,2026-04-08,29500,155 cm,51 kg,2026-04-08,2026-10-08
+Rohit S,21,74,78,76,Hyderabad,ECE,Male,rohit.s@gmail.com,9876543280,2026-01-16,37000,179 cm,77 kg,2026-01-16,2026-07-16
+Maya R,19,95,98,96,Bangalore,CSE,Female,maya.r@gmail.com,9876543281,2026-02-21,33000,158 cm,54 kg,2026-02-21,2026-08-21
+Vikas N,22,66,71,68,Delhi,ME,Male,vikas.n@gmail.com,9876543282,2026-03-24,44000,183 cm,85 kg,2026-03-24,2026-09-24
+Aparna S,19,88,92,90,Mysore,ISE,Female,aparna.s@gmail.com,9876543283,2026-04-10,30000,157 cm,53 kg,2026-04-10,2026-10-10
+Sanjana T,19, ,  , ,Bangalore,CSE,Female,sanjana.t@gmail.com,9876543284,2026-03-26,29000,156 cm,52 kg,2026-03-26,2026-09-26
+Devika M,19,90,95,92,Bengaluru,CSE,Female,devika.m@gmail.com,9876543285,2026-02-13,31000,158 cm,54 kg,2026-02-13,2026-08-13
+Abhishek P,21,78,82,80,Chennai,ECE,Male,abhishek.p@gmail.com,9876543286,2026-01-22,38000,177 cm,75 kg,2026-01-22,2026-07-22
+Rekha V,19,86,90,88,Mysore,ISE,Female,rekha.v@gmail.com,9876543287,2026-04-13,28500,155 cm,51 kg,2026-04-13,2026-10-13
+Arnav K,20,81,85,83,Mumbai,CSE,Male,arnav.k@gmail.com,9876543288,2026-02-09,35000,175 cm,73 kg,2026-02-09,2026-08-09

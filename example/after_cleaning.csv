@@ -1,0 +1,10 @@
+student_name,age,marks,attendance,city,email,phone,joining_date,salary
+Nidhi,20,89.0,92,Bangalore,nidhi@gmail.com,919876543210,2026-01-10,50000
+Rahul,21,92.0,85,Bangalore,,919876543210,2026-02-10,52000
+Priya,21,100.0,90,Bangalore,priya@gmail.com,919876543211,2026-02-15,51000
+Arjun,22,78.0,100,Bangalore,arjun@gmail.com,919876543213,2026-03-20,49000
+Meera,20,85.0,88,Bangalore,meera@gmail.com,919876543213,,50500
+Rohan,23,88.5,75,Bangalore,rohan@gmail.com,919876543214,2026-04-01,53750
+Ananya,21,94.0,0,Bangalore,ananya@gmail.com,919876543215,2026-05-01,51500
+Vikram,22,81.0,82,Bangalore,,919876543216,2026-05-10,49500
+Sneha,21,88.0,91,Bangalore,sneha@gmail.com,919876543217,2026-06-01,51000

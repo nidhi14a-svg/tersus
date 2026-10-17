@@ -1,0 +1,11 @@
+Student Name,Age,Marks,Attendance,City,Email,Phone,Joining Date,Salary
+ Nidhi ,20,89.0,92,Bangalore,nidhi@gmail.com,+91 9876543210,2026-01-10,50000
+Rahul,,92.0,85,bangalore,rahul@gmail,98765-43210,10/02/2026,52000
+ Priya,21,105.0,90,Bengaluru,priya@gmail.com,9876543211,Feb 15 2026,51000
+Nidhi,20,89.0,92,Bangalore,nidhi@gmail.com,+91 9876543210,2026-01-10,50000
+ARJUN,22,78.0,110,BANGALORE,arjun@gmail.com,987654321,2026-03-20,49000
+Meera,twenty,85.0,88, Bengaluru ,meera@gmail.com,+91-9876543213,invalid-date,50500
+  Rohan  ,23,,75,Bangalore,rohan@gmail.com,9876543214,2026-04-01,500000
+Ananya,21,94.0,-5,bangalore,ananya@gmail.com,98765 43215,01/05/2026,51500
+Vikram,22,81.0,82,Bengaluru,vikram@,9876543216,2026-05-10,49500
+Sneha,21,88.0,91,Bangalore,sneha@gmail.com,+91 9876543217,2026-06-01,51000

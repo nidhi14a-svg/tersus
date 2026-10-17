@@ -121,13 +121,18 @@ def fill_missing(
     # Determine target columns
     if columns is None:
         if strategy in ("mean", "median"):
-            target_cols = [
-                str(c)
-                for c in df.columns
-                if df[c].isna().any()
-                and pd.api.types.is_numeric_dtype(df[c])
-                and not pd.api.types.is_bool_dtype(df[c])
-            ]
+            target_cols = []
+            for c in df.columns:
+                if df[c].isna().any():
+                    if pd.api.types.is_numeric_dtype(df[c]) and not pd.api.types.is_bool_dtype(df[c]):
+                        target_cols.append(str(c))
+                    else:
+                        from tersus.types import _parse_word_numbers
+                        non_null = df[c].dropna()
+                        if len(non_null) > 0:
+                            parsed = pd.to_numeric(_parse_word_numbers(non_null), errors="coerce")
+                            if (parsed.notna().sum() / len(non_null)) >= 0.7:
+                                target_cols.append(str(c))
         else:
             target_cols = [str(c) for c in df.columns if df[c].isna().any()]
     else:
@@ -146,11 +151,18 @@ def fill_missing(
             continue
 
         if strategy in ("mean", "median"):
-            if not pd.api.types.is_numeric_dtype(series) or pd.api.types.is_bool_dtype(series):
-                raise TypeError(
-                    f"Cannot apply '{strategy}' strategy to non-numeric column '{col}' "
-                    f"(dtype: {series.dtype})."
-                )
+            is_num = pd.api.types.is_numeric_dtype(series) and not pd.api.types.is_bool_dtype(series)
+            if not is_num:
+                from tersus.types import _parse_word_numbers
+                mapped = _parse_word_numbers(series)
+                num_series = pd.to_numeric(mapped, errors="coerce")
+                non_null_orig = series.dropna()
+                if num_series.dropna().empty or (num_series.notna().sum() / max(1, len(non_null_orig))) < 0.7:
+                    raise TypeError(
+                        f"Cannot apply '{strategy}' strategy to non-numeric column '{col}' "
+                        f"(dtype: {series.dtype})."
+                    )
+                series = num_series
 
             valid_values = series.dropna()
             if valid_values.empty:
@@ -162,6 +174,11 @@ def fill_missing(
                 fill_val = round(float(valid_values.mean()), 4)
             else:
                 fill_val = round(float(valid_values.median()), 4)
+
+            if not is_num:
+                if (valid_values % 1 == 0).all():
+                    fill_val = int(fill_val)
+                    series = series.astype("Int64")
 
             df_clean[col] = series.fillna(fill_val)
             fill_values[col] = fill_val
