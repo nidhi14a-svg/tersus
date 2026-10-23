@@ -546,7 +546,11 @@ def clean(
         phones: bool, config dict, or column name(s).
         ranges: bool or dict mapping columns to (min, max).
         outliers: bool, str ('cap', 'drop'), or config dict.
-        auto: bool enabling full automated quality cleaning.
+        auto: bool enabling full automated quality cleaning. When True and
+            `types` is not explicitly provided, object columns are
+            auto-detected as int/float conversion candidates using the same
+            70%-parse-ratio heuristic documented in
+            `tersus.missing.fill_missing`.
         return_df: Whether to return a DataFrame instead of Cleaner.
             Defaults to True if data is a DataFrame, or False if data is a Cleaner.
         **kwargs: Extra parameters (validated against supported options).

@@ -283,3 +283,29 @@ def test_edge_cases_and_error_handling():
     empty_res = empty_cleaner.check_date_order("start", "end")
     assert empty_res.is_consistent is True
     assert empty_res.inconsistent_count == 0
+
+
+def test_check_relationship_malformed_expression_raises_clean_error():
+    # A syntactically/semantically broken expression string must surface as
+    # a ValueError (not crash with a raw pandas/numexpr traceback), since
+    # check_relationship wraps df.eval() failures explicitly.
+    df = pd.DataFrame({"col_a": [1, 2], "col_b": [3, 4]})
+    cleaner = Cleaner(df)
+
+    with pytest.raises(ValueError, match="Failed to evaluate expression rule"):
+        cleaner.check_relationship(
+            ["col_a", "col_b"], rule="col_a +++ nonexistent_column"
+        )
+
+
+def test_check_relationship_string_rule_does_not_silently_mutate_data():
+    # Documents current, intentional behavior: a string rule is evaluated
+    # read-only via df.eval() and never writes back into the DataFrame,
+    # regardless of what the expression computes.
+    df = pd.DataFrame({"col_a": [1, 2, 3], "col_b": [3, 4, 5]})
+    original = df.copy()
+    cleaner = Cleaner(df)
+
+    cleaner.check_relationship(["col_a", "col_b"], rule="col_a < col_b")
+
+    pd.testing.assert_frame_equal(cleaner.data, original)

@@ -187,6 +187,49 @@ def test_original_dataframe_not_mutated():
     pd.testing.assert_frame_equal(original, original_copy)
 
 
+def test_datetime_conversion_with_convert_words_does_not_crash():
+    # Regression test: convert_words previously leaked into pd.to_datetime's
+    # kwargs and raised "unexpected keyword argument 'convert_words'".
+    df = pd.DataFrame({"d": ["2024-01-01", "2024-02-01"]})
+    cleaner = Cleaner(df)
+    cleaner.convert_type("d", target_type="datetime", convert_words=True)
+
+    assert pd.api.types.is_datetime64_any_dtype(cleaner.data["d"])
+    assert cleaner.data["d"].tolist() == [
+        pd.Timestamp("2024-01-01"),
+        pd.Timestamp("2024-02-01"),
+    ]
+
+
+def test_clean_pipeline_datetime_type_conversion_does_not_crash():
+    # Regression test: the orchestrated clean(types={...}) pipeline always
+    # passed convert_words=True, which crashed for any datetime target.
+    from tersus import clean
+
+    df = pd.DataFrame({"d": ["2024-01-01", "2024-02-01"], "x": [1, 2]})
+    cleaned = clean(df, types={"d": "datetime"})
+
+    assert pd.api.types.is_datetime64_any_dtype(cleaned["d"])
+
+
+def test_affected_count_reflects_actual_changes_not_row_count():
+    # Regression test: affected_count previously always reported len(df),
+    # even when a conversion changed nothing (e.g. int column re-converted
+    # to int) or only some values actually changed (errors="coerce").
+    df = pd.DataFrame({"a": [1, 2, 3]})
+    cleaner = Cleaner(df)
+    cleaner.convert_type("a", target_type="int")
+    assert cleaner.last_operation.affected_count == 0
+
+    df2 = pd.DataFrame({"num": ["10", "bad", "30"]})
+    cleaner2 = Cleaner(df2)
+    cleaner2.convert_type("num", target_type="int", errors="coerce")
+    # All three values change representation (str -> int/NaN), so all three
+    # are affected here; the key behavior under test is that a no-op
+    # conversion (above) now reports 0 rather than len(df) in both cases.
+    assert cleaner2.last_operation.affected_count == 3
+
+
 def test_history_recording():
     df = pd.DataFrame({"val": ["10", "20"]})
     cleaner = Cleaner(df)

@@ -95,6 +95,13 @@ def find_category_variations(
     Note: This is a diagnostic function only. It does NOT automatically merge
     or modify any data without an explicit user mapping.
 
+    Known limitation: single-letter prefix clustering is a heuristic and can
+    be ambiguous when multiple candidate words share the same first letter
+    (e.g. a column containing 'N', 'No', and 'None' will cluster 'N' with
+    whichever of 'No'/'None' is processed first, not necessarily the
+    semantically intended one). Always review `suggested_mapping` before
+    applying it with `map_category_values`.
+
     Args:
         df: Pandas DataFrame.
         column: Column name to inspect.

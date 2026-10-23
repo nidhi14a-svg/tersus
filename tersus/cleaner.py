@@ -1606,6 +1606,13 @@ class Cleaner:
             ignore_na: Whether to skip checking rows where any involved column is null (default False).
             suggestion: Optional custom suggestion message to include if inconsistencies are found.
 
+        Security:
+            A string `rule` is evaluated with `DataFrame.eval`, which can
+            execute arbitrary attribute/method access. Only use trusted,
+            developer-authored rule strings; never build `rule` from
+            untrusted end-user input. Use the callable form of `rule`
+            instead when the source cannot be fully trusted.
+
         Returns:
             ConsistencyResult: Detailed report including inconsistent indices, rows, and suggestions.
         """

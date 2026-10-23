@@ -325,6 +325,15 @@ def check_relationship(
         ignore_na: Whether to skip checking rows where any involved column is null (default False).
         suggestion: Optional custom suggestion message to include if inconsistencies are found.
 
+    Security:
+        A string `rule` is evaluated with `DataFrame.eval`, which can fall
+        back to Python-level evaluation and execute arbitrary attribute or
+        method access. This is safe for rule strings written by a trusted
+        developer against their own data, but `rule` strings must NEVER be
+        constructed from untrusted/end-user input (e.g. values typed into a
+        web form) without independent sanitization. Prefer the callable form
+        of `rule` when the rule's source cannot be fully trusted.
+
     Returns:
         ConsistencyResult: Detailed report including inconsistent indices, rows, and suggestions.
     """

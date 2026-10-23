@@ -313,6 +313,21 @@ def test_error_on_non_numeric_column():
         cleaner.check_outliers("name", method="zscore")
 
 
+def test_error_on_mixed_type_object_column():
+    """A column holding genuinely numeric values but stored as object dtype
+    (e.g. mixed int/float/str-number entries) is still rejected, since
+    pandas reports it as non-numeric dtype. Outlier detection requires an
+    explicit numeric dtype -- users must convert_type() first rather than
+    relying on implicit coercion that could silently misinterpret values.
+    """
+    df = pd.DataFrame({"val": [1, 2.5, "3", 4]}, dtype=object)
+    assert df["val"].dtype == object
+    cleaner = Cleaner(df)
+
+    with pytest.raises(TypeError, match="is not numeric"):
+        cleaner.check_outliers("val", method="iqr")
+
+
 def test_error_on_missing_column():
     """Missing column raises KeyError."""
     df = pd.DataFrame({"val": [1, 2, 3]})

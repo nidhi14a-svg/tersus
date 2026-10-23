@@ -32,7 +32,13 @@ def _resolve_subset(
 
 
 def _validate_keep(keep: Union[str, bool]) -> Union[str, bool]:
-    """Validate the 'keep' parameter against allowed pandas options."""
+    """Validate the 'keep' parameter against allowed pandas options.
+
+    Accepts 'first', 'last', or False (to drop all duplicate occurrences).
+    As a convenience, the string "false" (any case) is also accepted as an
+    alias for the boolean False, since callers passing options from text
+    sources (e.g. CLI args, CSV/JSON config) may not have a native bool.
+    """
     if keep in ("first", "last", False):
         return keep
     if isinstance(keep, str) and keep.lower() == "false":

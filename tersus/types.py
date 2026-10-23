@@ -203,6 +203,26 @@ def _to_datetime(
         ) from exc
 
 
+def _count_changed_values(original: pd.Series, converted: pd.Series) -> int:
+    """Count how many positions actually changed between two aligned Series.
+
+    A value is considered changed if its missing-ness differs (one is NaN/NA
+    and the other isn't) or if both are present but compare unequal. Two
+    missing values (NaN/NA on both sides) are never counted as changed.
+    """
+    orig_na = original.isna()
+    conv_na = converted.isna()
+
+    changed = orig_na != conv_na
+    both_present = ~orig_na & ~conv_na
+    if both_present.any():
+        orig_vals = original[both_present].astype(object).to_numpy()
+        conv_vals = converted[both_present].astype(object).to_numpy()
+        changed.loc[both_present] = orig_vals != conv_vals
+
+    return int(changed.sum())
+
+
 def convert_column_type(
     df: pd.DataFrame,
     column: str,
@@ -242,8 +262,12 @@ def convert_column_type(
     series = df[column]
     orig_dtype = str(series.dtype)
 
+    # `convert_words` only applies to the numeric (int/float) handlers below;
+    # it must not be forwarded to pd.to_datetime (or any other handler) as an
+    # unexpected keyword argument.
+    convert_words = kwargs.pop("convert_words", False)
+
     try:
-        convert_words = kwargs.get("convert_words", False)
         if norm_type == "integer":
             converted = _to_integer(series, column, errors=errors, convert_words=convert_words)
         elif norm_type == "float":
@@ -267,11 +291,12 @@ def convert_column_type(
     new_dtype = str(converted.dtype)
 
     msg = f"Converted column '{column}' from {orig_dtype} to {new_dtype}."
+    affected_count = _count_changed_values(series, converted)
     record = CleaningRecord(
         operation="convert_type",
         strategy=norm_type,
         columns=[column],
-        affected_count=len(df),
+        affected_count=affected_count,
         details={
             "column": column,
             "target_type": target_type,

@@ -104,6 +104,15 @@ def fill_missing(
     Raises:
         ValueError: If strategy is invalid, constant value is missing, or statistical column is all-null.
         TypeError: If numerical strategy is applied to non-numeric column, or constant value type is incompatible.
+
+    Note:
+        For 'mean'/'median' on an object-dtype column, values are first
+        checked for English word-numbers (e.g. "twelve" -> 12) via
+        `tersus.types._parse_word_numbers`. The column is only treated as
+        numeric-and-fillable if at least 70% of its non-null values parse
+        successfully as numbers after this word-to-digit mapping; otherwise
+        a TypeError is raised. This 70% threshold is a fixed heuristic and
+        is not currently user-configurable.
     """
     valid_strategies = ("mean", "median", "mode", "constant")
     if not isinstance(strategy, str) or strategy.lower() not in valid_strategies:

@@ -162,6 +162,33 @@ def test_normalize_categories_title_and_trim():
     assert cleaner.data["department"].iloc[4] == "Human Resources"
 
 
+def test_single_letter_clustering_known_ambiguity_is_not_auto_applied():
+    """Negative/limitation case for the single-letter-prefix clustering heuristic.
+
+    'N' is ambiguous between 'No' and 'None'. The heuristic will cluster it
+    with one of them (documented in find_category_variations' docstring as a
+    known limitation) rather than raising an error, and this is only ever a
+    *suggestion* -- it must never be applied automatically.
+    """
+    df = pd.DataFrame({"resp": ["N", "No", "None", "Yes"]})
+    cleaner = Cleaner(df)
+    result = cleaner.inspect_categories("resp")
+
+    # 'N' is clustered with exactly one of its ambiguous candidates, not both,
+    # and 'Yes' (unrelated) is never pulled into any cluster.
+    clustered_with_n = [key for key, vals in result.variations.items() if "N" in vals]
+    assert len(clustered_with_n) == 1
+    assert clustered_with_n[0] in ("no", "none")
+    # 'Yes' has no single-letter sibling in this column, so it must stay in
+    # its own untouched cluster rather than being pulled into another one.
+    assert result.variations["yes"] == ["Yes"]
+
+    # Critically: this is diagnostic only. The underlying data is untouched
+    # until the user explicitly calls map_category_values with their own
+    # reviewed mapping.
+    assert cleaner.data["resp"].tolist() == ["N", "No", "None", "Yes"]
+
+
 def test_category_variations_result_formatting():
     df = pd.DataFrame({"cat": ["A", "a", "B"]})
     cleaner = Cleaner(df)

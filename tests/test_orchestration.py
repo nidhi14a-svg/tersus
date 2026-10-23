@@ -26,6 +26,54 @@ def test_clean_empty_options_does_not_modify_data():
     assert len(cleaner.history) == 0
 
 
+def test_full_pipeline_on_empty_dataframe_with_columns():
+    """profile -> suggest -> clean -> validate -> report must all run without
+    crashing on a zero-row DataFrame, since this is a required edge case.
+    """
+    df = pd.DataFrame(columns=["name", "age", "score"])
+    cleaner = Cleaner(df)
+
+    profile = cleaner.profile()
+    assert profile.row_count == 0
+
+    suggestions = cleaner.suggest()
+    assert len(suggestions) == 0
+
+    cleaner.clean(column_names=True, missing="median", duplicates=True, text=True)
+    assert cleaner.data.shape == (0, 3)
+
+    validation = cleaner.validate()
+    assert validation.goals_satisfied is True
+
+    report = cleaner.report()
+    assert "0 rows" in str(report) or "0 row" in str(report)
+
+
+def test_full_pipeline_on_single_row_dataframe():
+    """profile -> suggest -> clean -> validate -> report must all run without
+    crashing on a single-row DataFrame, since several statistics (IQR,
+    z-score, duplicate detection) are degenerate with n=1.
+    """
+    df = pd.DataFrame({" Name ": ["  Alice  "], "Age": [30], "Score": [None]})
+    cleaner = Cleaner(df)
+
+    profile = cleaner.profile()
+    assert profile.row_count == 1
+
+    suggestions = cleaner.suggest()
+    assert isinstance(len(suggestions), int)
+
+    cleaner.clean(column_names=True, missing="median", duplicates=True, text=True)
+    assert cleaner.data.shape[0] == 1
+    assert "name" in cleaner.data.columns
+
+    validation = cleaner.validate()
+    assert isinstance(validation.goals_satisfied, bool)
+
+    report = cleaner.report()
+    assert report is not None
+
+
 def test_clean_individual_missing_median():
     df = pd.DataFrame(
         {
