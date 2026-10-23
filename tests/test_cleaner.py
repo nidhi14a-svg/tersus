@@ -46,6 +46,21 @@ def test_csv_loading_path_object(tmp_path):
     assert cleaner.data["x"].iloc[0] == 1.5
 
 
+def test_duplicate_column_names_are_deduplicated():
+    df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=["a", "a", "b"])
+
+    with pytest.warns(UserWarning, match="duplicate column name"):
+        cleaner = Cleaner(df)
+
+    # No more duplicate column labels, so downstream per-column operations
+    # (e.g. profile()) can safely index a single Series per column.
+    assert not cleaner.data.columns.duplicated().any()
+    assert list(cleaner.data.columns) == ["a", "a_1", "b"]
+
+    profile = cleaner.profile()
+    assert set(profile.dtypes.keys()) == {"a", "a_1", "b"}
+
+
 def test_empty_dataframe():
     empty_df = pd.DataFrame()
     cleaner = Cleaner(empty_df)

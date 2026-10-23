@@ -7,6 +7,7 @@ name = "tersus"
 version = "0.1.0"
 description = "A Python data-cleaning and data-quality library built on top of Pandas"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.9"
 dependencies = [
     "pandas",

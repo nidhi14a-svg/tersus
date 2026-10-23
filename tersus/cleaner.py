@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import warnings
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Sequence, Union
 
@@ -13,7 +14,7 @@ from tersus.categories import (
     map_category_values,
     normalize_category_strings,
 )
-from tersus.columns import clean_dataframe_columns
+from tersus.columns import clean_dataframe_columns, make_unique_column_names
 from tersus.consistency import (
     ConsistencyResult,
     ConsistencySuggestion,
@@ -155,6 +156,19 @@ class Cleaner:
         else:
             raise TypeError(
                 f"Invalid input type: '{type(data).__name__}'. Expected a pandas DataFrame or a CSV file path (str or Path)."
+            )
+
+        if self._df.columns.duplicated().any():
+            duplicated_names = sorted(set(self._df.columns[self._df.columns.duplicated()]))
+            self._df.columns = make_unique_column_names(list(self._df.columns))
+            warnings.warn(
+                "Input data contains duplicate column name(s): "
+                f"{', '.join(str(name) for name in duplicated_names)}. "
+                "They have been automatically renamed with numeric suffixes "
+                "(e.g. 'col', 'col_1') so that every column can be addressed "
+                "unambiguously.",
+                UserWarning,
+                stacklevel=2,
             )
 
         self._initial_df: pd.DataFrame = self._df.copy()
