@@ -4,7 +4,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![Built On](https://img.shields.io/badge/built%20on-Pandas%20%26%20NumPy-150458.svg)](https://pandas.pydata.org/)
-[![Tests](https://img.shields.io/badge/tests-239%20passed-brightgreen.svg)]()
+[![Tests](https://img.shields.io/badge/tests-251%20passed-brightgreen.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-green.svg)]()
 
 ---
@@ -49,13 +49,19 @@ Instead of running ad-hoc transformations that risk silently altering or deletin
 
 ## 📦 Installation
 
-Tersus requires **Python 3.9 or higher** and is built on standard `pandas` and `numpy`.
+Tersus requires **Python 3.9 or higher** and is built on standard `pandas` (>=2.0) and `numpy` (>=1.24).
+
+### From PyPI
+
+```bash
+pip install tersus
+```
 
 ### From Source (Editable Mode)
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/tersus.git
+git clone https://github.com/nidhi14a-svg/tersus.git
 cd tersus
 
 # Create and activate a virtual environment
@@ -132,7 +138,7 @@ print("Cleaned data successfully saved to example/output.csv!")
 | **Value Validation** | Detect out-of-range values or violations of custom rules | `cleaner.check_range()`, `cleaner.check_values()`, `cleaner.check_rule()` |
 | **Date Processing** | Detect datetime columns, validate dates, standardize output formats | `cleaner.detect_datetime_columns()`, `cleaner.standardize_dates()` |
 | **Outlier Detection** | Mathematical outlier detection via IQR or Z-score without silent drops | `cleaner.detect_outliers()`, `cleaner.cap_outliers()` |
-| **Domain Validation** | Validate email format syntax and normalize Indian phone numbers (+91) | `cleaner.check_emails()`, `cleaner.check_phones()` |
+| **Domain Validation** | Validate email format syntax and normalize Indian phone numbers (+91) | `cleaner.check_email()`, `cleaner.check_phone()` |
 | **Category Normalization** | Identify spelling/case variations and apply explicit category mappings | `cleaner.find_category_variations()`, `cleaner.map_categories()` |
 | **Logical Consistency** | Check cross-column rules (start_date <= end_date, min <= max) | `cleaner.check_date_order()`, `cleaner.check_value_order()` |
 | **Physical Units** | Explicit conversions for length, weight, and temperature | `cleaner.convert_units()` |
@@ -226,7 +232,7 @@ cleaner.cap_outliers("salary", method="iqr")
 
 ```python
 # Validate email formats
-email_check = cleaner.check_emails("email")
+email_check = cleaner.check_email("email")
 print(f"Invalid email addresses: {email_check.invalid_count}")
 
 # Validate and format Indian phone numbers to E.164 (+919876543210)
